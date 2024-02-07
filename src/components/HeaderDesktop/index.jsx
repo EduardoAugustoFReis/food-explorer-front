@@ -1,5 +1,7 @@
 import { Container, Logout, Brand, ButtonDish } from "./styles";
 
+import {useAuth} from "../../hooks/auth";
+
 import {Link} from "react-router-dom";
 
 import logo from "../../assets/food explorer.png";
@@ -13,6 +15,9 @@ import { Button } from "../Button";
 
 
 export function HeaderDesktop(){
+  
+  const {signOut} = useAuth();
+
   return(
     <Container>
       <Brand>
@@ -28,7 +33,7 @@ export function HeaderDesktop(){
       </Link>
       </ButtonDish>
 
-      <Logout>
+      <Logout onClick={signOut}>
       <MdOutlineLogout/>      
       </Logout>
 
