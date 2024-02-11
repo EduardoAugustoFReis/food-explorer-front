@@ -17,7 +17,7 @@ export const Container = styled.div`
     padding: 1.2rem;
     
     >input{
-     display: none;
+     
     }
 
     >svg{

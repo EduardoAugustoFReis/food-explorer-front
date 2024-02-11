@@ -5,18 +5,21 @@ export const Container = styled.div`
   max-width: 500px;
   margin: 0 auto;
 
-  display: grid;
-  grid-template-rows: 70px auto auto 70px;
-  grid-template-areas: 
-  "header"
-  "image"
-  "content"
-  "footer";
+ 
   background-color: ${ ({theme}) =>theme.COLORS.DARK_400};
 
   
   @media (min-width: 501px){
     max-width: 100%;
+
+    display: grid;
+    grid-template-rows: 70px auto auto 70px;
+    grid-template-areas: 
+    "header"
+    "image"
+    "content"
+    "footer";
+
   }
   
   
@@ -65,8 +68,8 @@ export const Background = styled.div`
     gap: 4.0rem;
 
     img{
-      height: 25.0rem;
-      width: 25.0rem;
+      height: 20.0rem;
+      width: 20.0rem;
     }
 
     div{

@@ -5,24 +5,23 @@ export const Container = styled.div`
   max-width: 500px;
   margin: 0 auto;
 
-  display: grid;
-  grid-template-rows: auto auto 70px;
-  grid-template-areas: 
-  "header"
-  "content"
-  "footer";
- 
+  
   @media (min-width: 501px){
     max-width: 100%;
-  }
 
+    display: grid;
+    grid-template-rows: auto auto 70px;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
+  }
 
 `; 
 export const Main = styled.div`
- 
+  
   padding: 20px;
-
-
+  
   background-color: ${ ({theme}) => theme.COLORS.DARK_400};
 
   h1{
@@ -33,7 +32,8 @@ export const Main = styled.div`
   }
 
   @media (min-width: 501px){  
-    padding: 1.5rem 8.0rem;
+    grid-area: content;
+    padding: 1.5rem 10.0rem;
 
     .tag-ingredients{
       display: flex;
@@ -49,3 +49,7 @@ export const Main = styled.div`
   }
 
 `; 
+
+export const Form = styled.form`
+  padding: 20px;
+`;

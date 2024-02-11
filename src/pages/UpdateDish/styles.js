@@ -4,15 +4,16 @@ export const Container = styled.div`
   height: 100vh;
   max-width: 500px;
   margin: 0 auto;
-  display: grid;
-  grid-template-rows: auto auto 70px;
-  grid-template-areas: 
-  "header"
-  "content"
-  "footer";
+ 
  
   @media (min-width: 501px){
     max-width: 100%;
+    display: grid;
+    grid-template-rows: auto auto 70px;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
   }
 
 
@@ -37,8 +38,8 @@ export const Main = styled.div`
   }
 
   @media (min-width: 501px){
-    
-    padding: 10px 8.0rem;
+    grid-area: content;
+    padding: 1.5rem 10.0rem;
 
     .tag-ingredients{
       display: flex;
@@ -66,4 +67,7 @@ export const Buttons = styled.button`
   color: ${ ({theme}) => theme.COLORS.LIGHT_100};
   font-size: 2.2rem;
 
+`
+export const Form = styled.form`
+  padding: 2.0rem;
 `
