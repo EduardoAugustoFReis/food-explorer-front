@@ -1,6 +1,8 @@
+import { useState, useEffect } from "react";
+
 import { Container, Content} from "./styles";
 
-import {Link} from "react-router-dom";
+import {Link, useParams, useNavigate} from "react-router-dom";
 
 import {Header} from "../../components/Header";
 import {Footer} from "../../components/Footer";
@@ -14,6 +16,15 @@ import {FiPlus, FiMinus} from "react-icons/fi";
 import saladaRavanello from "../../assets/Salada ravanello.png";
 
 export function DishDetails(){
+
+  const [dish, setDish] = useState(null);
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  function handleUpdateButtonClick() {
+    navigate(`/update/${id}`);
+  }
+
   return(
     <Container>
       <Header/>  
@@ -50,8 +61,9 @@ export function DishDetails(){
         <FiPlus/>
         </button>
         </div>
-
-        <Button title="pedir"/>
+       
+        <Button title="atualizar" onClick={handleUpdateButtonClick}/>
+       
         </div>
       </Content> 
       

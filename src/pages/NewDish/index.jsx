@@ -4,7 +4,7 @@ import { api } from "../../services/api";
 
 import {Link, useNavigate} from "react-router-dom";
 
-import { Container, Main, Form } from "./styles";
+import { Container, Main, Form, InputCategory, InputUpload } from "./styles";
 
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
@@ -14,6 +14,8 @@ import { ButtonText } from "../../components/ButtonText";
 import { DishItem } from "../../components/DishItem";
 import { TextArea } from "../../components/TextArea";
 import { Section } from "../../components/Section";
+
+import { RiUpload2Fill } from "react-icons/ri";
 
 
 export function NewDish() {
@@ -111,14 +113,18 @@ export function NewDish() {
     <Form>
 
     <Section title="Imagem do Prato">
+        <InputUpload>
           <label htmlFor="image">
           <input
           id="image" 
           type="file" 
           onChange={handleImageChange}
           />
+          <RiUpload2Fill/>
+          Selecione a imagem
           </label>
-      </Section>
+        </InputUpload>    
+    </Section>
 
       <Section title="Nome do Prato">
         <Input 
@@ -129,11 +135,21 @@ export function NewDish() {
       </Section>
 
       <Section title="Categoria">
-        <Input 
-        type="text" 
-        placeholder="refeição, sobremesa ou bebida"
-        onChange={e => setCategory(e.target.value)}
-        />
+      <InputCategory>
+          <label htmlFor="category">
+            <select name="" 
+            id="category" 
+            value={category}
+            onChange={e => setCategory(e.target.value)}
+            >
+              <option value="">Selecionar</option>
+              <option value="meal">Refeição</option>
+              <option value="dessert">Sobremesa</option>
+              <option value="drinks">Bebidas</option>
+              
+            </select>
+          </label>
+        </InputCategory>
       </Section>
 
       <Section title="Preço">

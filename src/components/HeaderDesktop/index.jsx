@@ -1,5 +1,6 @@
 import { Container, Logout, Brand, ButtonDish } from "./styles";
 
+import { useEffect, useState } from "react";
 import {useAuth} from "../../hooks/auth";
 
 import {Link} from "react-router-dom";
@@ -14,9 +15,16 @@ import { Input } from "../Input";
 import { Button } from "../Button";
 
 
-export function HeaderDesktop(){
+export function HeaderDesktop({ onInputChange }){
   
   const {signOut} = useAuth();
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setInputValue(value);
+    onInputChange(value); 
+  };
 
   return(
     <Container>
@@ -25,7 +33,13 @@ export function HeaderDesktop(){
       <img src={logo} alt="Logo do site" />
       </Brand>
       
-      <Input icon={IoIosSearch} placeholder="Busque por pratos ou ingredientes" type="text"/>
+      <Input 
+      icon={IoIosSearch} 
+      placeholder="Busque por pratos ou ingredientes" 
+      type="text"
+      value={inputValue}
+      onChange={handleInputChange}
+      />
       
       <ButtonDish>
       <Link to="/new">

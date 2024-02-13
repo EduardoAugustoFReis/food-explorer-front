@@ -36,9 +36,9 @@ export function Foods( {data, ...rest}){
       <img src={saladaRavanello} alt="imagem de uma salada" />
       </Link>
       
-      <h3>Nome do prato</h3>
+      <h3></h3>
       
-      <p>preço</p>
+      <p></p>
 
       <div>
         <button onClick={sub}>

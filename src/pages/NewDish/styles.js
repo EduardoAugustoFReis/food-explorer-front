@@ -53,3 +53,46 @@ export const Main = styled.div`
 export const Form = styled.form`
   padding: 20px;
 `;
+
+export const InputCategory = styled.div`
+  
+  select{
+    width: 100%;
+    height: 4.8rem;
+    border: none;
+    border-radius: 1.0rem;
+    padding: 1.2rem;
+    background-color: ${ ({theme}) =>theme.COLORS.DARK_900};
+    color: ${ ({theme}) =>theme.COLORS.LIGHT_100};
+    font-size: 1.6rem;
+  }
+`;
+
+export const InputUpload = styled.div`
+  width: 100%;
+  height: 4.8rem;
+  background-color: ${ ({theme}) =>theme.COLORS.DARK_900};
+  padding: 1.2rem;
+  border: none;
+  border-radius: 1.0rem;
+ 
+
+  label{
+    font-size: 1.8rem;
+    color: ${ ({theme}) =>theme.COLORS.LIGHT_100};
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    >svg{
+      font-size: 20px;
+    }
+  }
+
+  input{
+    display: none;
+  }
+
+`;

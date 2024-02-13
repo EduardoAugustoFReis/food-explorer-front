@@ -4,6 +4,8 @@ export const Container = styled.div`
   grid-area: footer;
   width: 100%;
 
+  height: 7.0rem;
+  
   display: flex;
   align-items: center;
   justify-content: center;

@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   max-width: 500px;
   margin: 0 auto;
-
  
   background-color: ${ ({theme}) =>theme.COLORS.DARK_400};
 
@@ -37,11 +36,11 @@ export const Background = styled.div`
   margin-top: 1.0rem;
   margin-bottom: 1.0rem;
   background-color: transparent;
-  padding: 0px 1.6rem;
+  padding: 0px 2.0rem;
 
   img{
-    height: 12.0rem;
-    width: 12.0rem;
+    height: 10.0rem;
+    width: 10.0rem;
   }
 
   div{
@@ -50,10 +49,11 @@ export const Background = styled.div`
     
     >h2, p{
     color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
+    text-align: left;
     }
 
     >h2{
-      font-size: 2.0rem;
+      font-size: 1.8rem;
       padding-bottom: 5px;
     }
 
