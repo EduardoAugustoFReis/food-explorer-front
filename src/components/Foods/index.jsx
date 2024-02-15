@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { api } from "../../services/api";
+
 import { Container } from "./styles";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { FiMinus, FiPlus } from "react-icons/fi";
 
 export function Foods({ data, ...rest }) {
   const [qtdTotalItems, setTotal] = useState(0);
+  const navigate = useNavigate();
 
   function add() {
     setTotal(qtdTotalItems + 1);
@@ -19,21 +22,26 @@ export function Foods({ data, ...rest }) {
     }
   }
 
+  function handleDetails() {
+    navigate(`/details/${data.id}`); 
+  }
   
   console.log("Dados recebidos no componente Foods:", data);
 
   return (
     <Container {...rest}>
-      <Link to={`/details/${data.id}`}>
+
         <img
-          src={`http://localhost:3333/files/${data.image}`}
-          alt={`imagem de ${data.name}`}
+          src={`${api.defaults.baseURL}/files/${data.image}`} 
+          alt="Imagem do prato." 
+          onClick={() => handleDetails(data.id)} 
         />
-      </Link>
 
       <h3>{data.name}</h3>
 
-      <p>{data.description}</p>
+      <span>{data.description}</span>
+
+      <p>{data.price}</p>
 
       <div>
         <button onClick={sub}>

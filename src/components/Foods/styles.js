@@ -13,17 +13,23 @@ export const Container = styled.div`
   background-color: ${({theme}) =>theme.COLORS.DARK_600} ;
   border-radius: 1.0rem;
 
-  a{
-    cursor: pointer;
+  
     img{
-    width: 9.0rem;
+    width: 19.0rem;
+    cursor: pointer;
   }
-  }
+  
   
   >h3{
     color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
     font-size: 20px;
   }
+
+  >span{
+    color: ${ ({theme}) =>theme.COLORS.LIGHT_400};
+    text-align: center;
+  }
+
   >p{
     color: ${ ({theme}) =>theme.COLORS.CAKE_200};
     font-size: 18px;

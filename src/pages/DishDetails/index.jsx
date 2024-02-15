@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { api } from "../../services/api";
 
 import { Container, Content} from "./styles";
 
@@ -13,17 +14,32 @@ import {Section} from "../../components/Section";
 
 import {FiPlus, FiMinus} from "react-icons/fi";
 
-import saladaRavanello from "../../assets/Salada ravanello.png";
 
 export function DishDetails(){
 
   const [dish, setDish] = useState(null);
+
   const { id } = useParams();
   const navigate = useNavigate();
 
   function handleUpdateButtonClick() {
     navigate(`/update/${id}`);
   }
+
+
+  useEffect(() => {
+    async function fetchDishDetails() {
+      try {
+        const response = await api.get(`/dishes/${id}`);
+        console.log(response.data);
+        setDish(response.data);
+      } catch (error) {
+        console.error("Error fetching dish details:", error);
+      }
+    }
+
+    fetchDishDetails();
+  }, [id]);
 
   return(
     <Container>
@@ -33,22 +49,24 @@ export function DishDetails(){
         <Link to="/">
         <ButtonText title="Voltar"/>
         </Link>
-        <img src={saladaRavanello} alt="imagem de uma salada" />
         
-
-        <h2>nome do prato</h2>
-        <p>Descrição do prato</p>
-
+        <img src={dish ? `${api.defaults.baseURL}/files/${dish.image}` : ''} alt="imagem de uma salada" />
+         
+        <h2>{dish ? dish.name : ''}</h2>
+       
+        <p>{dish ? dish.description : ''}</p>
+        
         <Section>
           <div className="ingredients-tag">
-          <Tag title="alface"/>
-          <Tag title="alface"/>
-          <Tag title="alface"/>
-          <Tag title="alface"/>
-          <Tag title="alface"/>
-          <Tag title="alface"/>
+          {dish && dish.ingredients && dish.ingredients.map(ingredient => (
+            <Tag 
+              key={String(ingredient.id)} 
+              title={ingredient.title} 
+            />
+          ))}
           </div>
         </Section>
+
 
         <div className="button-wrapper">
 

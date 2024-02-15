@@ -3,7 +3,7 @@ import {useAuth} from "../../hooks/auth";
 
 import { Container, Logout, Brand, ButtonDish, HeaderDesktop, Menu, HeaderMobile} from "./styles"; 
 
-import {Link} from "react-router-dom";
+import {Navigate, useNavigate} from "react-router-dom";
 
 import logo from "../../assets/food explorer.png";
 import polygon from "../../assets/Polygon 1.png";
@@ -19,6 +19,17 @@ export function Header({ setSearch }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const {signOut} = useAuth();
+
+  const navigate = useNavigate();
+
+  function handleNew(){
+    navigate("/new");
+  }
+
+  function handleInputChange(event) {
+    setSearch(event.target.value);
+    console.log("Valor de busca:", event.target.value);
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,12 +63,17 @@ export function Header({ setSearch }) {
             <img src={logo} alt="Logo do site" />
             </Brand>
 
-            <Input icon={IoIosSearch} placeholder="Busque por pratos ou ingredientes" type="text"/>
+            <Input
+              icon={IoIosSearch}
+              placeholder="Busque por pratos ou ingredientes"
+              type="text"
+              onChange={handleInputChange}
+            />
             
             <ButtonDish>
-              <Link to="/new">
-              <Button title="Novo prato"/>
-              </Link>
+              
+              <Button title="Novo prato" onClick={handleNew}/>
+              
             </ButtonDish>
 
             <Logout onClick={signOut}>
