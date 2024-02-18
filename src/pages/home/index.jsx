@@ -4,12 +4,15 @@ import { api } from "../../services/api";
 
 import { useNavigate } from "react-router-dom";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef} from "react";
 
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Section } from "../../components/Section";
 import { Foods } from "../../components/Foods";
+
+import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 
 import macaronsImg from "../../assets/home-macarons.png";
 
@@ -18,35 +21,27 @@ export function Home() {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
-  function handleDetails(id) {
-    navigate(`/dish/${id}`);
-  }
-
   useEffect(() => {
     async function fetchDishes() {
       try {
-        console.log("Chamando fetchDishes...");
         const response = await api.get(`/dishes?name=${search}`);
     
-        const meals = response.data.filter((dish) => {
-          console.log("Categoria do prato:", dish.category);
+        const meals = response.data.filter((dish) => {  
           return dish.category === "meal";
         });
-        console.log("Refeições filtradas:", meals);
+        
         
         const desserts = response.data.filter((dish) => {
-          console.log("Categoria do prato:", dish.category);
+         
           return dish.category === "dessert";
         });
-        console.log("Sobremesas filtradas:", desserts);
+        
         
         const drinks = response.data.filter((dish) => {
-          console.log("Categoria do prato:", dish.category);
+         
           return dish.category === "drinks";
         });
-        console.log("Bebidas filtradas:", drinks);
         
-        console.log(response.data);
         setDishes({ meals, desserts, drinks });
       } catch (error) {
         console.error("Error fetching dishes:", error);
@@ -70,6 +65,7 @@ export function Home() {
       <Content>
 
         <Section title="Refeições">
+         <div className="meals">
          {
           dishes.meals.map(dish =>(
             <Foods
@@ -77,9 +73,11 @@ export function Home() {
             data={dish}/>
           ))
          }
+         </div> 
         </Section>
 
         <Section title="Sobremesas">
+       
          {
           dishes.desserts.map(dish =>(
             <Foods
@@ -87,6 +85,7 @@ export function Home() {
             data={dish}/>
           ))
          }
+       
         </Section>
 
         <Section title="Bebidas">

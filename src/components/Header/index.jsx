@@ -26,6 +26,11 @@ export function Header({ setSearch }) {
     navigate("/new");
   }
 
+  function handleSignOut(){
+    navigate("/");
+    signOut();
+  }
+
   function handleInputChange(event) {
     setSearch(event.target.value);
     console.log("Valor de busca:", event.target.value);
@@ -76,7 +81,7 @@ export function Header({ setSearch }) {
               
             </ButtonDish>
 
-            <Logout onClick={signOut}>
+            <Logout onClick={handleSignOut}>
               <MdOutlineLogout/>      
             </Logout>
           </HeaderDesktop>  

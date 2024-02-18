@@ -3,7 +3,7 @@ import { api } from "../../services/api";
 
 import { Container, Content} from "./styles";
 
-import {Link, useParams, useNavigate} from "react-router-dom";
+import {useParams, useNavigate} from "react-router-dom";
 
 import {Header} from "../../components/Header";
 import {Footer} from "../../components/Footer";
@@ -26,6 +26,9 @@ export function DishDetails(){
     navigate(`/update/${id}`);
   }
 
+  function handleBack(){
+    navigate(-1);
+  }
 
   useEffect(() => {
     async function fetchDishDetails() {
@@ -46,9 +49,8 @@ export function DishDetails(){
       <Header/>  
 
       <Content>
-        <Link to="/">
-        <ButtonText title="Voltar"/>
-        </Link>
+       
+        <ButtonText title="Voltar" onClick={handleBack}/> 
         
         <img src={dish ? `${api.defaults.baseURL}/files/${dish.image}` : ''} alt="imagem de uma salada" />
          

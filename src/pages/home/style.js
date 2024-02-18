@@ -18,7 +18,6 @@ export const Container = styled.div`
     "image"
     "content"
     "footer";
-
   }
   
   
@@ -93,6 +92,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
 
   @media (min-width: 501px){
     

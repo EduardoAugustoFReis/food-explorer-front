@@ -4,7 +4,7 @@ import { api } from "../../services/api";
 
 import { Container, Main, Buttons, Form, InputCategory, InputUpload} from "./styles";
 
-import {Link, useNavigate, useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 import {Header} from "../../components/Header";
 import {Footer} from "../../components/Footer";
@@ -106,12 +106,18 @@ export function UpdateDish(){
         await api.delete(`dishes/${id}`);
         alert("Prato excluído com sucesso.");
 
+        navigate("/");
+
       }catch (error){
         console.error("Erro ao excluir o prato", error);
         alert("Não foi possível excluir o prato.");
       }
     }
   } 
+
+  function handleBack(){
+    navigate(-1);
+  }
   
   return(
     <Container>
@@ -119,9 +125,7 @@ export function UpdateDish(){
 
       <Main>
         
-      <Link to="/">
-        <ButtonText title="Voltar"/>
-      </Link>
+      <ButtonText title="Voltar" onClick={handleBack}/>
       
       <h1>Editar prato</h1>
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { api } from "../../services/api";
 
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 import { Container, Main, Form, InputCategory, InputUpload } from "./styles";
 
@@ -99,16 +99,18 @@ export function NewDish() {
     setFileName(file.name);
   }
 
+  function handleBack(){
+    navigate(-1);
+  }
+
   return (
     <Container>
     
     <Header/>
 
     <Main>
-
-      <Link to="/">
-        <ButtonText title="Voltar"/>
-      </Link>
+     
+      <ButtonText title="Voltar" onClick={handleBack}/>
 
     <Form>
 
