@@ -5,7 +5,7 @@ import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 
 import { useEffect, useState, useRef} from "react";
-
+  
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Section } from "../../components/Section";
@@ -63,7 +63,7 @@ export function Home() {
         </div>
       </Background>
       <Content>
-
+        <main>
         <Section title="Refeições">
          <div className="meals">
          {
@@ -97,7 +97,7 @@ export function Home() {
           ))
          }
         </Section>
-
+        </main>
 
       </Content>
 

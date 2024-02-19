@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { api } from "../../services/api";
 
+import {useAuth} from "../../hooks/auth";
+import {USER_ROLES} from "../../utils/roles";
+
 import { Container, Content} from "./styles";
 
 import {useParams, useNavigate} from "react-router-dom";
@@ -17,7 +20,10 @@ import {FiPlus, FiMinus} from "react-icons/fi";
 
 export function DishDetails(){
 
+  const {user} = useAuth();
+
   const [dish, setDish] = useState(null);
+  const [qtdTotalItems, setTotal] = useState(0);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -29,6 +35,19 @@ export function DishDetails(){
   function handleBack(){
     navigate(-1);
   }
+
+  function add() {
+    setTotal(qtdTotalItems + 1);
+  }
+
+  function sub() {
+    if (qtdTotalItems <= 0) {
+      setTotal(0);
+    } else {
+      setTotal(qtdTotalItems - 1);
+    }
+  }
+
 
   useEffect(() => {
     async function fetchDishDetails() {
@@ -73,16 +92,28 @@ export function DishDetails(){
         <div className="button-wrapper">
 
         <div className="button-units">
-        <button>
-        <FiMinus/>
-        </button>
-        <span>01</span>
-        <button>
-        <FiPlus/>
-        </button>
+        { user.role === USER_ROLES.CUSTOMER &&
+        <>
+          <button onClick={sub}>
+          <FiMinus/>
+          </button>
+          <span>{qtdTotalItems}</span>
+          <button onClick={add}>
+          <FiPlus/>
+          </button>
+        </>
+        }
         </div>
-       
-        <Button title="atualizar" onClick={handleUpdateButtonClick}/>
+
+        {
+          user.role === USER_ROLES.CUSTOMER &&
+          <Button title="Incluir">
+          </Button>
+        }
+
+        { user.role === USER_ROLES.ADMIN &&
+          <Button title="atualizar" onClick={handleUpdateButtonClick}/>
+        }
        
         </div>
       </Content> 

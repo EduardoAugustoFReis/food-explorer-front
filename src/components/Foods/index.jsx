@@ -1,5 +1,9 @@
 import { useState } from "react";
+
 import { api } from "../../services/api";
+
+import {useAuth} from "../../hooks/auth";
+import {USER_ROLES} from "../../utils/roles";
 
 import { Container } from "./styles";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +11,8 @@ import { Button } from "../../components/Button";
 import { FiMinus, FiPlus } from "react-icons/fi";
 
 export function Foods({ data, ...rest }) {
+  const {user} = useAuth();
+
   const [qtdTotalItems, setTotal] = useState(0);
   const navigate = useNavigate();
 
@@ -41,19 +47,28 @@ export function Foods({ data, ...rest }) {
 
       <span>{data.description}</span>
 
-      <p>{data.price}</p>
+      <p>R$ {data.price}</p>
 
+      
       <div>
-        <button onClick={sub}>
-          <FiMinus />
-        </button>
-        <span>{qtdTotalItems}</span>
-        <button onClick={add}>
-          <FiPlus />
-        </button>
-      </div>
-
-      <Button title="incluir" />
+        {user.role === USER_ROLES.CUSTOMER &&
+        <>
+          <button onClick={sub}>
+            <FiMinus />
+          </button>
+          <span>{qtdTotalItems}</span>
+          <button onClick={add}>
+            <FiPlus />
+          </button>
+        </>
+        }
+      </div> 
+      
+      {
+        user.role === USER_ROLES.CUSTOMER &&
+        <Button title="incluir" />
+      }
+      
     </Container>
   );
 }

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import {useAuth} from "../../hooks/auth";
+import {USER_ROLES} from "../../utils/roles";
 
-import { Container, Logout, Brand, ButtonDish, HeaderDesktop, Menu, HeaderMobile} from "./styles"; 
+import { Container, Logout, Brand, ButtonDish, HeaderDesktop, Menu, HeaderMobile, BrandMobile} from "./styles"; 
 
-import {Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 import logo from "../../assets/food explorer.png";
 import polygon from "../../assets/Polygon 1.png";
@@ -18,7 +19,7 @@ import { Button } from "../Button";
 export function Header({ setSearch }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const {signOut} = useAuth();
+  const {signOut, user} = useAuth();
 
   const navigate = useNavigate();
 
@@ -56,17 +57,30 @@ export function Header({ setSearch }) {
             <Menu>
               <PiListBold/>
             </Menu>
+            <BrandMobile>
             <img src={polygon} alt="imagem de um polígono" />
             <img src={logo} alt="imagem da logo" />
+
+            { user.role === USER_ROLES.ADMIN &&
+              <p>Admin</p>
+            }
+            </BrandMobile>
+
           </HeaderMobile>  
         </div>
       ) : (
         <div>
           <HeaderDesktop>
+            <div>
             <Brand>
             <img src={polygon} alt="imagem de um polígono" />
             <img src={logo} alt="Logo do site" />
+
+            { user.role === USER_ROLES.ADMIN &&
+              <p>Admin</p>
+            }
             </Brand>
+            </div>
 
             <Input
               icon={IoIosSearch}
@@ -76,14 +90,17 @@ export function Header({ setSearch }) {
             />
             
             <ButtonDish>
-              
-              <Button title="Novo prato" onClick={handleNew}/>
-              
+            {user.role === USER_ROLES.ADMIN && (
+              <Button title="Novo prato" onClick={handleNew} />
+            )}
+
+            {user.role === USER_ROLES.CUSTOMER && <Button title="Carrinho" />}
             </ButtonDish>
 
             <Logout onClick={handleSignOut}>
               <MdOutlineLogout/>      
             </Logout>
+
           </HeaderDesktop>  
         </div>
       )}
