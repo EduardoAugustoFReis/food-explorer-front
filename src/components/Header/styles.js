@@ -96,4 +96,12 @@ export const Brand = styled.div`
 
 export const ButtonDish = styled.div`
   width: 30.0rem;
+
+  button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.0rem;
+  }
+
 `;

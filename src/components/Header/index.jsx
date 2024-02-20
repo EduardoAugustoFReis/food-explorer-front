@@ -12,13 +12,14 @@ import polygon from "../../assets/Polygon 1.png";
 import { IoIosSearch } from "react-icons/io";
 import { MdOutlineLogout } from "react-icons/md";
 import { PiListBold } from "react-icons/pi";
+import { FiShoppingCart } from "react-icons/fi";
 
 import { Input } from "../Input";
 import { Button } from "../Button";
 
-export function Header({ setSearch }) {
+export function Header({ setSearch}) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+ 
   const {signOut, user} = useAuth();
 
   const navigate = useNavigate();
@@ -94,7 +95,11 @@ export function Header({ setSearch }) {
               <Button title="Novo prato" onClick={handleNew} />
             )}
 
-            {user.role === USER_ROLES.CUSTOMER && <Button title="Carrinho" />}
+            {user.role === USER_ROLES.CUSTOMER &&
+            <>
+            <Button icon={FiShoppingCart} title="Carrinho" /> 
+            </> 
+            }
             </ButtonDish>
 
             <Logout onClick={handleSignOut}>

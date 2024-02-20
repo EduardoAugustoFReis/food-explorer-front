@@ -9,9 +9,29 @@ export const Container = styled.div`
   padding: 1.5rem; 
   
   margin-bottom: 1.0rem;
+
+  position: relative;
   
   background-color: transparent;
   border-radius: 1.0rem;
+  
+  .favorites-button{
+    position: absolute;
+    top: 0px;
+    right: 2.0rem;
+    svg{
+      font-size: 2.4rem;
+    }
+  }
+
+  .pencil-button{
+    position: absolute;
+    top: 0px;
+    right: 2.0rem;
+    svg{
+      font-size: 2.4rem;
+    }
+  }
   
   img {
     width: 18.0rem;

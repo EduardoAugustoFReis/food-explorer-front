@@ -53,7 +53,7 @@ export function Home() {
 
   return (
     <Container>
-      <Header  setSearch={setSearch}/>
+      <Header  setSearch={setSearch} />
       
       <Background>
         <img src={macaronsImg} alt="imagem de macarons" />

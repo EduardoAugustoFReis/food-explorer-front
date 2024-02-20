@@ -1,19 +1,25 @@
 import { useState } from "react";
 
 import { api } from "../../services/api";
-
 import {useAuth} from "../../hooks/auth";
 import {USER_ROLES} from "../../utils/roles";
+import { useNavigate } from "react-router-dom";
 
 import { Container } from "./styles";
-import { useNavigate } from "react-router-dom";
+
 import { Button } from "../../components/Button";
 import { FiMinus, FiPlus } from "react-icons/fi";
 
-export function Foods({ data, ...rest }) {
+import { IoHeartOutline } from "react-icons/io5";
+import { IoHeart } from "react-icons/io5";
+import { GoPencil } from "react-icons/go";
+
+export function Foods({ data,...rest }) {
   const {user} = useAuth();
 
   const [qtdTotalItems, setTotal] = useState(0);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [inCart, setInCart] = useState(false);
   const navigate = useNavigate();
 
   function add() {
@@ -31,11 +37,52 @@ export function Foods({ data, ...rest }) {
   function handleDetails() {
     navigate(`/details/${data.id}`); 
   }
-  
+
+  function handleUpdate() {
+    navigate(`/update/${data.id}`);
+  }
+
+  function handleFavoriteClick(){
+    setIsFavorite(!isFavorite);
+    
+    if (!isFavorite) {
+      alert("Prato adicionado aos favoritos.");
+    }else{
+      alert("Prato retirado dos favoritos.");
+    }
+
+  };
+
+  const handleCart = () => {
+    if (inCart) {
+      setInCart(false);
+      alert("O prato foi Retirado do carrinho.");
+    } else {
+      setInCart(true);
+      alert("O prato foi colocado no carrinho.");
+    }
+  };
+
   console.log("Dados recebidos no componente Foods:", data);
 
   return (
     <Container {...rest}>
+      
+      { user.role === USER_ROLES.CUSTOMER &&
+        <div className="favorites-button">
+        <button onClick={handleFavoriteClick}>
+        {isFavorite ? <IoHeart /> : <IoHeartOutline />}
+        </button>
+        </div>
+      }
+
+      { user.role === USER_ROLES.ADMIN &&
+        <div className="pencil-button">
+        <button onClick={handleUpdate}>
+          <GoPencil/>
+        </button>
+        </div>
+      }
 
         <img
           src={`${api.defaults.baseURL}/files/${data.image}`} 
@@ -66,7 +113,7 @@ export function Foods({ data, ...rest }) {
       
       {
         user.role === USER_ROLES.CUSTOMER &&
-        <Button title="incluir" />
+        <Button title={inCart ? "Remover" : "Incluir"} onClick={handleCart}/>
       }
       
     </Container>
