@@ -6,6 +6,7 @@ export const Container = styled.textarea`
 
   background-color: ${ ({theme}) =>theme.COLORS.DARK_800};
   color: ${ ({theme}) =>theme.COLORS.LIGHT_100};
+  font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   border: none;
   resize: none;

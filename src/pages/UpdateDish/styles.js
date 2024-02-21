@@ -25,6 +25,7 @@ export const Main = styled.div`
 
   h1{
     color: ${ ({theme}) => theme.COLORS.LIGHT_100};
+    font-family: "Poppins", sans-serif;
     font-size: 2.8rem;
     padding-top: 1.0rem;
     padding-bottom: 1.0rem;
@@ -82,6 +83,7 @@ export const InputCategory = styled.div`
     padding: 1.2rem;
     background-color: ${ ({theme}) =>theme.COLORS.DARK_900};
     color: ${ ({theme}) =>theme.COLORS.LIGHT_100};
+    font-family: "Roboto", sans-serif;
     font-size: 1.6rem;
   }
 `;

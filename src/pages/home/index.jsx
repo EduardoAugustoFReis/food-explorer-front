@@ -62,6 +62,7 @@ export function Home() {
           <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
         </div>
       </Background>
+
       <Content>
         <main>
         <Section title="Refeições">

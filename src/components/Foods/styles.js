@@ -40,12 +40,14 @@ export const Container = styled.div`
   
   > h3 {
     color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
+    font-family: "Poppins", sans-serif;
     font-size: 20px;
     text-align: center; 
   }
 
   > span {
     color: ${({theme}) => theme.COLORS.LIGHT_400};
+    font-family: "Roboto", sans-serif;
     text-align: center;
     overflow: hidden; 
     max-height: 3.6rem; 
@@ -56,6 +58,7 @@ export const Container = styled.div`
 
   > p {
     color: ${ ({theme}) =>theme.COLORS.CAKE_200};
+    font-family: "Roboto", sans-serif;
     font-size: 18px;
     text-align: center; 
   }
@@ -68,6 +71,7 @@ export const Container = styled.div`
 
     span {
       color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
+      font-family: "Roboto", sans-serif;
       font-size: 16px;
     }
 

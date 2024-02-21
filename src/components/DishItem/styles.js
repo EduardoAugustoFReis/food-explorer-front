@@ -38,6 +38,7 @@ export const Container = styled.div`
     height: 5.6rem;
     width: 100%;
     color: ${ ({theme}) => theme.COLORS.LIGHT_100};
+    font-family: "Roboto", sans-serif;
     font-size: 1.6rem;
     padding: 1.2rem;
     background: transparent;

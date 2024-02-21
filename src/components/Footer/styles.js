@@ -23,6 +23,7 @@ export const Container = styled.div`
   >span{
     font-size: 1.2rem;
     color: ${ ({theme}) =>theme.COLORS.LIGHT_200};
+    font-family: "Roboto", sans-serif;
   }
 
 `;

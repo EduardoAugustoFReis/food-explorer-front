@@ -110,7 +110,9 @@ export function NewDish() {
 
     <Main>
      
-      <ButtonText title="Voltar" onClick={handleBack}/>
+    <ButtonText title="Voltar" onClick={handleBack}/>
+
+    <h1>Criar prato</h1>
 
     <Form>
 

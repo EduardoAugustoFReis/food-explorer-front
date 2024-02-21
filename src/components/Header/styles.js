@@ -28,6 +28,7 @@ export const BrandMobile = styled.div`
   
   p{
     color: ${ ({theme}) => theme.COLORS.CAKE_200};
+    font-family: "Roboto", sans-serif;
     font-size: 1.2rem;
     position: absolute;
     top: 3.0rem;
@@ -86,6 +87,7 @@ export const Brand = styled.div`
 
   p{
     color: ${ ({theme}) => theme.COLORS.CAKE_200};
+    font-family: "Roboto", sans-serif;
     font-size: 1.4rem;
     position: absolute;
     top: 3.5rem;

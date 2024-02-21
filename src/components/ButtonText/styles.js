@@ -5,6 +5,7 @@ export const Container = styled.button`
   border: none;
   font-size: 1.8rem;
   color: ${ ({theme}) =>theme.COLORS.LIGHT_100};
+  font-family: "Poppins", sans-serif;
   padding-top: 1.0rem;
   padding-bottom: 1.0rem;
 

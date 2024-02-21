@@ -35,11 +35,13 @@ export const Content = styled.div`
 
   h2{
     font-size: 2.4rem;
+    font-family: "Poppins", sans-serif;
     padding-top: 1.0rem;
     padding-bottom: 1.0rem;
   }
   p{
     font-size: 1.8rem;
+    font-family: "Poppins", sans-serif;
     padding-bottom: 1.0rem;
   }
 
@@ -59,6 +61,7 @@ export const Content = styled.div`
 
     span{
       color: ${({theme}) =>theme.COLORS.LIGHT_300};  
+      font-family: "Roboto", sans-serif;
       font-size: 18px;
     }
     

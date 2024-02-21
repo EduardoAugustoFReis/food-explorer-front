@@ -1,5 +1,3 @@
-
-
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -40,11 +38,14 @@ export const Form = styled.form`
   >h1{
     color:  ${ ({theme}) =>theme.COLORS.LIGHT_100} ;
     font-size: 2.0rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
     padding-bottom: 5px;
   }
 
   >a{
     color:  ${ ({theme}) =>theme.COLORS.LIGHT_100} ;
+    font-family: "Poppins", sans-serif;
     font-size: 1.8rem;
     text-align: center;
     padding-top: 2.0rem;

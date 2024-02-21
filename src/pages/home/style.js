@@ -27,6 +27,7 @@ export const Background = styled.div`
   width: 100%;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1.0rem;
@@ -35,7 +36,7 @@ export const Background = styled.div`
 
   img{
     height: 10.0rem;
-    width: 10.0rem;
+    width: 20.0rem;
   }
 
   div{
@@ -44,36 +45,44 @@ export const Background = styled.div`
     
     >h2, p{
     color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
-    text-align: left;
+    text-align: center;
     }
 
     >h2{
       font-size: 1.8rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
       padding-bottom: 5px;
     }
 
     p{
       font-size: 1.4rem;
+      font-family: "Roboto", sans-serif;
+      padding-bottom: 1.0rem;
     }
   }
   
   @media (min-width: 501px){
+    display: flex;
+    flex-direction: row;
     padding-top: 4.0rem;
 
     gap: 4.0rem;
 
     img{
-      height: 20.0rem;
-      width: 20.0rem;
+      height: 25.0rem;
+      width: 25.0rem;
     }
 
     div{
 
       >h2{
         font-size: 2.8rem;
+        text-align: left;
       }
       >p{
         font-size: 1.8rem;
+        text-align: left;
       }
     }
 
