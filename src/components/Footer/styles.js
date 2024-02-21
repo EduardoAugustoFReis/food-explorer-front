@@ -9,10 +9,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 1.0rem;
 
   padding: 6px;
-
 
   background-color: ${ ({theme}) =>theme.COLORS.DARK_600};
 

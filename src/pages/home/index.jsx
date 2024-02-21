@@ -15,10 +15,13 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
 
 import macaronsImg from "../../assets/home-macarons.png";
+import { SideMenu } from "../../components/SideMenu";
 
 export function Home() {
   const [dishes, setDishes] = useState({ meals: [], desserts: [], drinks: [] });
   const [search, setSearch] = useState("");
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -53,8 +56,14 @@ export function Home() {
 
   return (
     <Container>
-      <Header  setSearch={setSearch} />
-      
+      <SideMenu
+      menuIsOpen={menuIsOpen}
+      onCloseMenu={() => setMenuIsOpen(false)}
+      setSearch={setSearch}
+      />
+
+      <Header setSearch={setSearch} onOpenMenu={()=> setMenuIsOpen(true)}/>
+
       <Background>
         <img src={macaronsImg} alt="imagem de macarons" />
         <div>
@@ -65,41 +74,38 @@ export function Home() {
 
       <Content>
         <main>
-        <Section title="Refeições">
-         <div className="meals">
-         {
-          dishes.meals.map(dish =>(
-            <Foods
-            key={String(dish.id)} 
-            data={dish}/>
-          ))
-         }
-         </div> 
-        </Section>
+          <Section title="Refeições">
+            <div className="meals">
+              {dishes.meals.length > 0 ? (
+                dishes.meals.map((dish) => (
+                  <Foods key={String(dish.id)} data={dish} />
+                ))
+              ) : (
+                <p>Nenhum prato de refeição encontrado.</p>
+              )}
+            </div>
+          </Section>
 
-        <Section title="Sobremesas">
-       
-         {
-          dishes.desserts.map(dish =>(
-            <Foods
-            key={String(dish.id)} 
-            data={dish}/>
-          ))
-         }
-       
-        </Section>
+          <Section title="Sobremesas">
+            {dishes.desserts.length > 0 ? (
+              dishes.desserts.map((dish) => (
+                <Foods key={String(dish.id)} data={dish} />
+              ))
+            ) : (
+              <p>Nenhuma sobremesa encontrada.</p>
+            )}
+          </Section>
 
-        <Section title="Bebidas">
-         {
-          dishes.drinks.map(dish =>(
-            <Foods
-            key={String(dish.id)} 
-            data={dish}/>
-          ))
-         }
-        </Section>
+          <Section title="Bebidas">
+            {dishes.drinks.length > 0 ? (
+              dishes.drinks.map((dish) => (
+                <Foods key={String(dish.id)} data={dish} />
+              ))
+            ) : (
+              <p>Nenhuma bebida encontrada.</p>
+            )}
+          </Section>
         </main>
-
       </Content>
 
       <Footer/>

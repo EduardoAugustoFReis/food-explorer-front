@@ -104,8 +104,25 @@ export const Content = styled.div`
     height: 100%;
   }
 
+  p{
+    color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+    font-weight: 400;
+    font-size: 1.8rem;
+    padding: 1.2rem;
+  }
+
   @media (min-width: 501px){
     
+    p{
+    color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.2rem;
+  }
+  
   }
   
 `;

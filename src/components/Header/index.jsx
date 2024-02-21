@@ -17,7 +17,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { Input } from "../Input";
 import { Button } from "../Button";
 
-export function Header({ setSearch}) {
+export function Header({ setSearch, onOpenMenu}) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
  
   const {signOut, user} = useAuth();
@@ -55,7 +55,7 @@ export function Header({ setSearch}) {
       {windowWidth <= 600 ? (
         <div>
           <HeaderMobile>
-            <Menu>
+            <Menu onClick={onOpenMenu}>
               <PiListBold/>
             </Menu>
             <BrandMobile>

@@ -34,7 +34,7 @@ export const Container = styled.div`
   }
   
   img {
-    width: 18.0rem;
+    width: 14.0rem;
     cursor: pointer;
   }
   
@@ -83,6 +83,12 @@ export const Container = styled.div`
     svg {
       color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
       font-size: 20px;
+    }
+  }
+
+  @media (min-width: 501px){
+    >img{
+      width: 19.0rem;
     }
   }
 `;
