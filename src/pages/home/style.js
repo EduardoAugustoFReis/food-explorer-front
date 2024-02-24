@@ -22,7 +22,7 @@ export const Container = styled.div`
   
 `;
 
-export const Background = styled.div`
+export const Brand = styled.div`
   grid-area: image;
   width: 100%;
 
@@ -95,22 +95,51 @@ export const Content = styled.div`
   width: 100%;
   
   background-color: ${ ({theme}) =>theme.COLORS.DARK_400};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ 
   
   >main{
     grid-area: content;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
   }
 
   p{
     color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
     font-family: "Poppins", sans-serif;
-    text-align: left;
     font-weight: 400;
+    text-align: center;
     font-size: 1.8rem;
-    padding: 1.2rem;
+    padding: 1.0rem 0px;
+  }
+
+  .carousel-size-card {
+    display: flex;
+    overflow-x: hidden; 
+    max-width: 25.0rem;
+  }
+
+  .carousel {
+    display: flex;
+  }
+
+  .meal-item {
+    flex: 0 0 auto; 
+    margin-right: 1rem; 
+  }
+
+  .button-carousel-layout{
+    display: flex;
+    justify-content: center;
+    gap: 3.0rem;
+  } 
+  .button-carousel{
+    background: none;
+    border: none;
+    color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
+    font-size: 2.2rem;
   }
 
   @media (min-width: 501px){
@@ -118,12 +147,33 @@ export const Content = styled.div`
     p{
     color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
     font-family: "Poppins", sans-serif;
-    text-align: center;
     font-weight: 400;
     font-size: 2.2rem;
+  }  
+
+  .carousel-size-card {
+    display: flex;
+    overflow-x: hidden; 
+    max-width: 50.0rem;
+  }
+
+  .carousel {
+    display: flex;
+  }
+
+  .meal-item {
+    flex: 0 0 auto; 
+    margin-right: 1rem; 
   }
   
   }
   
+`;
+
+export const CarouselInner = styled.div`
+  display: flex;
+  width: ${props => `${props.width}%`};
+  transform: ${props => `translateX(-${props.position * (100 / props.items)}%)`};
+  transition: transform 0.5s ease;
 `;
 

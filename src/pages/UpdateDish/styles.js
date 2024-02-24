@@ -67,7 +67,13 @@ export const Buttons = styled.button`
 
   color: ${ ({theme}) => theme.COLORS.LIGHT_100};
   font-family: "Poppins", sans-serif;
-  font-size: 2.2rem;
+  font-size: 1.4rem;
+
+  @media (min-width: 501px){
+
+    font-size: 1.6rem;
+
+  }
 
 `
 export const Form = styled.form`

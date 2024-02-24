@@ -31,6 +31,7 @@ export const Content = styled.div`
 
   h2,p{
     color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
+    text-align: center;
   }
 
   h2{
@@ -39,6 +40,7 @@ export const Content = styled.div`
     padding-top: 1.0rem;
     padding-bottom: 1.0rem;
   }
+
   p{
     font-size: 1.8rem;
     font-family: "Poppins", sans-serif;
