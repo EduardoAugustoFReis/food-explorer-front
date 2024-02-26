@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
   max-width: 500px;
   margin: 0 auto;
@@ -165,6 +164,11 @@ export const Content = styled.div`
     flex: 0 0 auto; 
     margin-right: 1rem; 
   }
+
+  .button-carousel{
+    padding-bottom: 1.0rem;
+  }
+
   
   }
   

@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.aside`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
+  
 
   background-color: ${ ({theme}) =>theme.COLORS.DARK_400};
   position: absolute;
@@ -18,12 +19,13 @@ export const Container = styled.aside`
 
 `;
 
-export const Top = styled.div`
+export const ButtonCloseMenu = styled.div`
     display: flex;
+    align-items: center;
     gap: 10px;
     color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
     
-    padding: 3.0rem 1.2rem;
+    padding: 2.0rem 1.2rem;
 
     >h2{
       font-size: 20px;

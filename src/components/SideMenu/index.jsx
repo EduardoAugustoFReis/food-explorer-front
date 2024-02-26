@@ -1,4 +1,4 @@
-import { Container, Top, Main} from "./style";
+import { Container, ButtonCloseMenu, Main} from "./style";
 
 import {useAuth} from "../../hooks/auth";
 import {USER_ROLES} from "../../utils/roles";
@@ -33,12 +33,12 @@ export function SideMenu( {menuIsOpen, onCloseMenu, setSearch}){
   return(
     <Container data-menu-is-open={menuIsOpen}> 
 
-      <Top>
+      <ButtonCloseMenu>
         <button onClick={onCloseMenu}>
         <IoMdClose/>
         </button>
       <h2>Menu</h2>
-      </Top>
+      </ButtonCloseMenu>
 
       <Main>
       <Input 

@@ -49,6 +49,10 @@ export function UpdateDish(){
 
   async function handleUpdateDish() {
 
+    if (!image) {
+      return alert("Insira a imagem do prato.");
+    }
+
     if (!name) {
       return alert("Digite o nome do prato.");
     }
@@ -81,7 +85,7 @@ export function UpdateDish(){
 
       await api.patch(`/dishes/${id}`, formData);
       alert("Prato atualizado com sucesso!");
-
+      navigate("/");
     }catch (error){
       if(error.response){
         alert(error.response.data.message);
