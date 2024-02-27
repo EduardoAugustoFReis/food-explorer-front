@@ -43,7 +43,7 @@ export function SideMenu( {menuIsOpen, onCloseMenu, setSearch}){
       <Main>
       <Input 
       icon={IoIosSearch} 
-      placeholder="Busque por pratos ou ingredientes"
+      placeholder="Busque pelo nome do prato"
       onChange={handleInputChange}
       /> 
 

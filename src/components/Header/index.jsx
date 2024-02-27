@@ -85,7 +85,7 @@ export function Header({ setSearch, onOpenMenu}) {
 
             <Input
               icon={IoIosSearch}
-              placeholder="Busque por pratos ou ingredientes"
+              placeholder="Busque pelo nome do prato."
               type="text"
               onChange={handleInputChange}
             />
