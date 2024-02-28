@@ -27,6 +27,7 @@ export const Content = styled.div`
   
   img{
     width: 20.0rem;
+    border-radius: 50%;
   }
 
   h2,p{
