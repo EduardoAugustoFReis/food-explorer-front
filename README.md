@@ -1,8 +1,52 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Desafio final Food Explorer
 
-Currently, two official plugins are available:
+Sobre o projeto:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O projeto consiste em um cardápio virtual para um restaurante.
+
+site criado utilizando ViteJs na parte front-end da aplicação. 
+
+
+## Funcionalidades da aplicação
+
+- Login e cadastro 
+- Filtar pratos pelo nome
+- Criação de novos pratos (disponível apenas para administradores)
+- Editar pratos criados  (disponível apenas para administradores)
+- Excluir pratos criados  (disponível apenas para administradores)
+- Mostrar detalhes do prato criado
+
+## Páginas da aplicação
+
+- SignIn
+- SignUp
+- Home
+- NewDish  
+- UpdateDish
+- DishDetails
+
+## Tecnológias utilizadas
+
+- ViteJs
+- ReactJs
+- Styled Components
+- React Icons
+- Axios
+- Framer motion
+
+## Como utilizar a aplicação
+
+- Há dois usuários cadastrados, um com permissão de administrador e outo usuário commun, na página de Login preencha os campos de Email e senha com os seguintes dados:
+
+Admin: 
+- Email: admin@email.com
+- Senha: 123
+
+User:  
+- Email: user@email.com
+- Senha: 123
+
+## Link Deploy
+
+.fazer o deploy
