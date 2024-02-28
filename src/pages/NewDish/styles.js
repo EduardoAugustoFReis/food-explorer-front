@@ -30,7 +30,7 @@ export const Main = styled.div`
   h1{
     color: ${ ({theme}) => theme.COLORS.LIGHT_100};
     font-family: "Poppins", sans-serif;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     padding-top: 1.0rem;
     padding-bottom: 1.0rem;
   }
