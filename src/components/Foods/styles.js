@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {DEVICE_BREAKPOINT} from "../../styles/deviceBreakproint";
+
 
 export const Container = styled.div`
   width: 25.0rem;
@@ -87,7 +89,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 501px){
+  @media (min-width: ${DEVICE_BREAKPOINT.SM}){
     >img{
       width: 19.0rem;
     }

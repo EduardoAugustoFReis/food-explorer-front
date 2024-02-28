@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {DEVICE_BREAKPOINT} from "../../styles/deviceBreakproint";
 
 export const Container = styled.div`
   height: 100vh;
@@ -12,7 +13,7 @@ export const Container = styled.div`
 
   background-color: ${ ({theme}) =>theme.COLORS.DARK_400};
 
-  @media (min-width: 500px){
+  @media (min-width: ${DEVICE_BREAKPOINT.SM}){
     max-width: 100%;
     display: flex;
     flex-direction: row;
@@ -49,7 +50,7 @@ export const Form = styled.form`
     text-align: center;
     padding-top: 2.0rem;
   }
-  @media (min-width: 500px){
+  @media (min-width:  ${DEVICE_BREAKPOINT.SM}){
     max-width: 65.0rem;
     padding: 2.0rem;
 

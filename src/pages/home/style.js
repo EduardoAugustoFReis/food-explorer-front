@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {DEVICE_BREAKPOINT} from "../../styles/deviceBreakproint";
 
 export const Container = styled.div`
   max-width: 500px;
@@ -6,7 +7,7 @@ export const Container = styled.div`
   height: 100vh;
 
   
-  @media (min-width: 501px){
+  @media (min-width: ${DEVICE_BREAKPOINT.SM}){
     max-width: 100%;
 
     display: grid;
@@ -61,7 +62,7 @@ export const Brand = styled.div`
     }
   }
   
-  @media (min-width: 501px){
+  @media (min-width:  ${DEVICE_BREAKPOINT.SM}){
     display: flex;
     flex-direction: row;
     padding-top: 4.0rem;
@@ -139,9 +140,10 @@ export const Content = styled.div`
     border: none;
     color: ${ ({theme}) =>theme.COLORS.LIGHT_300};
     font-size: 2.2rem;
+    padding-bottom: 1.0rem;
   }
 
-  @media (min-width: 501px){
+  @media (min-width:  ${DEVICE_BREAKPOINT.SM}){
     
     p{
     color: ${ ({theme}) =>theme.COLORS.LIGHT_300};

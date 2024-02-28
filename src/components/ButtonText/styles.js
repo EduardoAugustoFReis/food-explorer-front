@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {DEVICE_BREAKPOINT} from "../../styles/deviceBreakproint";
+
 
 export const Container = styled.button`
   background: none;
@@ -9,7 +11,7 @@ export const Container = styled.button`
   padding-top: 1.0rem;
   padding-bottom: 1.0rem;
 
-  @media (min-width: 501px){
+  @media (min-width: ${DEVICE_BREAKPOINT.SM}){
     font-size: 2.2rem;
   }
 `;

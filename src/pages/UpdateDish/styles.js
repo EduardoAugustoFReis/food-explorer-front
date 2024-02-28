@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {DEVICE_BREAKPOINT} from "../../styles/deviceBreakproint";
+
 
 export const Container = styled.div`
   height: 100vh;
@@ -6,7 +8,7 @@ export const Container = styled.div`
   margin: 0 auto;
  
  
-  @media (min-width: 501px){
+  @media (min-width: ${DEVICE_BREAKPOINT.SM}){
     max-width: 100%;
     display: grid;
     grid-template-rows: auto auto 70px;
@@ -18,6 +20,7 @@ export const Container = styled.div`
 
 
 `;
+
 export const Main = styled.div`
   padding: 20px;
 
@@ -38,7 +41,7 @@ export const Main = styled.div`
     padding-bottom: 1.0rem;
   }
 
-  @media (min-width: 501px){
+  @media (min-width:  ${DEVICE_BREAKPOINT.SM}){
     grid-area: content;
     padding: 1.5rem 10.0rem;
 
@@ -69,7 +72,7 @@ export const Buttons = styled.button`
   font-family: "Poppins", sans-serif;
   font-size: 1.4rem;
 
-  @media (min-width: 501px){
+  @media (min-width:  ${DEVICE_BREAKPOINT.SM}){
 
     font-size: 1.6rem;
 

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {DEVICE_BREAKPOINT} from "../../styles/deviceBreakproint";
+
 
 export const Container = styled.div`
   height: 100vh;
@@ -6,7 +8,7 @@ export const Container = styled.div`
   margin: 0 auto;
 
   
-  @media (min-width: 501px){
+  @media (min-width: ${DEVICE_BREAKPOINT.SM}){
     max-width: 100%;
 
     display: grid;
@@ -17,7 +19,8 @@ export const Container = styled.div`
     "footer";
   }
 
-`; 
+`;
+
 export const Main = styled.div`
   
   padding: 20px;
@@ -27,12 +30,12 @@ export const Main = styled.div`
   h1{
     color: ${ ({theme}) => theme.COLORS.LIGHT_100};
     font-family: "Poppins", sans-serif;
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     padding-top: 1.0rem;
     padding-bottom: 1.0rem;
   }
 
-  @media (min-width: 501px){  
+  @media (min-width: ${DEVICE_BREAKPOINT.SM}){  
     grid-area: content;
     padding: 1.5rem 10.0rem;
 
@@ -52,7 +55,7 @@ export const Main = styled.div`
 `; 
 
 export const Form = styled.form`
-  padding: 20px;
+  padding: 2.0rem;
 `;
 
 export const InputCategory = styled.div`

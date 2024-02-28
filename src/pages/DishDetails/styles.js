@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import {DEVICE_BREAKPOINT} from "../../styles/deviceBreakproint";
+
 
 export const Container = styled.div`
   max-width: 500px;
   height: 100vh;
   margin: 0 auto;
 
-  @media (min-width: 501px){
+  @media (min-width: ${DEVICE_BREAKPOINT.SM}){
     max-width: 100%;
     display: grid;
     grid-template-rows: 100px auto 70px;
@@ -86,11 +88,12 @@ export const Content = styled.div`
     gap: 8px;
   }
 
-  @media (min-width: 501px){
+  @media (min-width: ${DEVICE_BREAKPOINT.SM}){
     padding-top: 15px;
 
     img{
-      width: 250px;
+      width: 25.0rem;
+      border-radius: 50%;
     }
   }
 `;
