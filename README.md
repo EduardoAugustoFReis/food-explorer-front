@@ -48,5 +48,6 @@ User:
 - Senha: 123
 
 ## Link Deploy
+Esse foi o link gerado pelo Netlify
 
-.fazer o deploy
+https://foodexplorerdesafiofinal.netlify.app
