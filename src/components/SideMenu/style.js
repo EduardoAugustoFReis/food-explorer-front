@@ -16,6 +16,7 @@ export const Container = styled.aside`
   &[data-menu-is-open="true"]{
     transform: translateX(0);
   }
+  
 
 `;
 
@@ -43,13 +44,14 @@ export const ButtonCloseMenu = styled.div`
 `;
 
 export const Main = styled.div`
+  height: 178.5rem;
   display: flex;
   flex-direction: column;
   gap: 2.0rem;
 
   background-color: ${ ({theme}) =>theme.COLORS.DARK_400};
   
-  padding: 12px;
+  padding: 1.2rem;
 
   button{
   background: none;
