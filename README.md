@@ -35,6 +35,24 @@ site criado utilizando ViteJs na parte front-end da aplicação.
 - Axios
 - Framer motion
 
+## Páginas da aplicação
+
+Preview de algumas páginas da aplicação
+
+Home:
+
+![Página Home](https://i.ibb.co/58sTp59/Captura-de-tela-2024-03-01-193928.png)
+
+Details:
+![Página de detalhes do prato](https://i.ibb.co/qBffwTM/Captura-de-tela-2024-03-01-194007.png)
+
+Create:
+![Página de criar prato](https://i.postimg.cc/DfFvmZQG/Captura-de-tela-2024-03-01-194029.png)
+
+Update:
+![Página de criar prato](https://i.postimg.cc/DFKyxjVz/Captura-de-tela-2024-03-01-194050.png)
+
+
 ## Como utilizar a aplicação
 
 - Há dois usuários cadastrados, um com permissão de administrador e outo usuário commun, na página de Login preencha os campos de Email e senha com os seguintes dados:
